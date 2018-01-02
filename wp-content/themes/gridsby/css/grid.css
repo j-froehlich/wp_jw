@@ -1,280 +1,281 @@
 body {
-	position: relative;
+  position : relative;
 }
 
 .noscroll {
-	overflow: hidden;
+  overflow : hidden;
 }
 
 .grid-wrap {
-	margin: 10px auto 0;
-	max-width: 1360px;
-	width: 100%;
-	padding: 0;
-	-webkit-perspective: 1500px;
-	perspective: 1500px;
+  margin              : 10px auto 0;
+  max-width           : 1360px;
+  width               : 100%;
+  padding             : 0;
+  -webkit-perspective : 1500px;
+  perspective         : 1500px;
 }
 
 .gridsby {
-	position: relative;
-	-webkit-transition: all 0.5s cubic-bezier(0,0,0.25,1);
-	transition: all 0.5s cubic-bezier(0,0,0.25,1);
-	-webkit-transform-style: inherit;
-	transform-style: inherit; 
+  position                : relative;
+  -webkit-transition      : all 0.5s cubic-bezier(0, 0, 0.25, 1);
+  transition              : all 0.5s cubic-bezier(0, 0, 0.25, 1);
+  -webkit-transform-style : inherit;
+  transform-style         : inherit;
 }
 
 .view-full .gridsby {
-	-webkit-transform: translateZ(-1500px);
-	transform: translateZ(-1500px);
+  -webkit-transform : translateZ(-1500px);
+  transform         : translateZ(-1500px);
 }
 
 .gridsby figure {
-	display: inline-block;
-	cursor: pointer;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  display               : inline-block;
+  cursor                : pointer;
+  -webkit-touch-callout : none;
+  -webkit-user-select   : none;
+  -khtml-user-select    : none;
+  -moz-user-select      : none;
+  -ms-user-select       : none;
+  user-select           : none;
 }
 
 .gridsby figure.active {
-	opacity: 0;
+  opacity : 0;
 }
 
 .gridsby .placeholder {
-	pointer-events: none;
-	position: absolute;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	-webkit-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
+  pointer-events          : none;
+  position                : absolute;
+  -webkit-transform-style : preserve-3d;
+  transform-style         : preserve-3d;
+  -webkit-transition      : all 0.5s ease-out;
+  transition              : all 0.5s ease-out;
 }
 
 .placeholder > div {
-	display: block;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
+  display                     : block;
+  position                    : absolute;
+  width                       : 100%;
+  height                      : 100%;
+  -webkit-backface-visibility : hidden;
+  backface-visibility         : hidden;
 }
 
 .placeholder .front img {
-	width: 100%;
-	height: 100%;
+  width  : 100%;
+  height : 100%;
 }
 
 .placeholder .back {
-	background: white;
-	-webkit-transform: rotateY(180deg);
-	transform: rotateY(180deg);
+  background        : transparent;
+  -webkit-transform : rotateY(180deg);
+  transform         : rotateY(180deg);
 }
 
 .view-full .placeholder {
-	-webkit-transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
-	transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
+  -webkit-transition : all 0.5s 0.1s cubic-bezier(0, 0, 0.25, 1);
+  transition         : all 0.5s 0.1s cubic-bezier(0, 0, 0.25, 1);
 }
 
 .vertical .view-full .placeholder {
-	-webkit-transform: translateZ(1500px) rotateX(-179.9deg);
-	transform: translateZ(1500px) rotateX(-179.9deg); /* FF, Chrome, can we agree on one direction, pleeease? */
+  -webkit-transform : translateZ(1500px) rotateX(-179.9deg);
+  transform         : translateZ(1500px) rotateX(-179.9deg); /* FF, Chrome, can we agree on one direction, pleeease? */
 }
 
 .horizontal .view-full .placeholder {
-	-webkit-transform: translateZ(1500px) rotateY(-179.9deg);
-	transform: translateZ(1500px) rotateY(-179.9deg);
+  -webkit-transform : translateZ(1500px) rotateY(-179.9deg);
+  transform         : translateZ(1500px) rotateY(-179.9deg);
 }
 
 .gridsby figure img {
-	display: block;
-	width: 100%;
-	height: auto; 
+  display : block;
+  width   : 100%;
+  height  : auto;
 }
 
 .content,
 .loading {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	pointer-events: none; /* Careful, does not work in IE < 11 http://caniuse.com/#search=pointer-events */
+  position       : fixed;
+  top            : 0;
+  left           : 0;
+  right          : 0;
+  bottom         : 0;
+  pointer-events : none; /* Careful, does not work in IE < 11 http://caniuse.com/#search=pointer-events */
 }
 
 .content {
-	overflow-y: scroll;
-	height: 0; /* What seems to be the problem, officer? Well, we have a second scroll bar in Chrome! */
-	background: #fff;
-	visibility: hidden;
-	z-index: 400;
-	-webkit-overflow-scrolling: touch;
+  overflow-y                 : auto;
+  height                     : 0; /* What seems to be the problem, officer? Well, we have a second scroll bar in Chrome! */
+  background                 : transparent;
+  visibility                 : hidden;
+  z-index                    : 400;
+  -webkit-overflow-scrolling : touch;
 }
 
 .loading {
-	opacity: 0;
-	z-index: 1;
-	background: transparent url(../img/preloader.gif) no-repeat center center;
-	-webkit-transform: scale(0.5);
-	transform: scale(0.5);
-	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-	transition: opacity 0.5s, transform 0.5s;
+  opacity            : 0;
+  z-index            : 1;
+  /*background         : transparent url(../img/preloader.gif) no-repeat center center;*/
+  -webkit-transform  : scale(0.5);
+  transform          : scale(0.5);
+  -webkit-transition : opacity 0.5s, -webkit-transform 0.5s;
+  transition         : opacity 0.5s, transform 0.5s;
 }
 
 .loading.show {
-	opacity: 1;
-	-webkit-transform: scale(1);
-	transform: scale(1);
+  opacity           : 1;
+  -webkit-transform : scale(1);
+  transform         : scale(1);
 }
 
 .content.show {
-	height: auto;
-	pointer-events: auto;
-	visibility: visible;
+  height         : auto;
+  pointer-events : auto;
+  visibility     : visible;
 }
 
 .content > div {
-	z-index: 10;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	overflow: hidden;
-	height: 0;
-	opacity: 0;
-	background: #fff;
+  z-index    : 10;
+  position   : absolute;
+  top        : 0;
+  width      : 100%;
+  overflow   : auto;
+  height     : 0;
+  opacity    : 0;
+  background : transparent;
 }
 
 .content > div.show {
-	height: auto;
-	opacity: 1;	
-	-webkit-transition: opacity 0.6s;
-	transition: opacity 0.6s;
+  height             : 100%;
+  opacity            : 1;
+  -webkit-transition : opacity 0.6s;
+  transition         : opacity 0.6s;
 }
 
 .icon:before {
-	font-family: 'fontawesome';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family             : 'fontawesome';
+  speak                   : none;
+  font-style              : normal;
+  font-weight             : normal;
+  font-variant            : normal;
+  text-transform          : none;
+  line-height             : 1;
+  -webkit-font-smoothing  : antialiased;
+  -moz-osx-font-smoothing : grayscale;
 }
 
 .close-content {
-	position: fixed;
-	z-index: 1000;
-	top: 0;
-	right: 10px;
-	font-size: 1.6em;
-	color: #aaa;
-	cursor: pointer;
-	pointer-events: none;
-	padding: 1em;
-	opacity: 0;
-	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
+  position           : fixed;
+  z-index            : 1000;
+  top                : 0;
+  right              : 10px;
+  font-size          : 1.6em;
+  color              : #aaa;
+  cursor             : pointer;
+  pointer-events     : none;
+  padding            : 1em;
+  opacity            : 0;
+  -webkit-transition : opacity 0.3s;
+  transition         : opacity 0.3s;
 }
 
 .close-content:hover {
-	color: #999;
+  color : #999;
 }
 
 .content > div.show ~ .close-content {
-	opacity: 1;
-	pointer-events: auto;
+  opacity        : 1;
+  pointer-events : auto;
 }
 
 /* Dummy content */
 
 .dummy-img,
 div.show p,
-.dummy-title
-{
-	max-width: 600px;
-	width: 100%;
-	opacity: 0;
-	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-	transition: opacity 0.5s, transform 0.5s;
+.dummy-title {
+  max-width          : 600px;
+  width              : 100%;
+  opacity            : 0;
+  -webkit-transition : opacity 0.5s, -webkit-transform 0.5s;
+  transition         : opacity 0.5s, transform 0.5s;
 }
 
 .vertical .dummy-img,
 .vertical div.show p,
 .vertical .dummy-title {
-	-webkit-transform: translateY(100px);
-	transform: translateY(100px);
+  -webkit-transform : translateY(100px);
+  transform         : translateY(100px);
 }
 
 .horizontal .dummy-img,
 .horizontal div.show p,
 .horizontal .dummy-title {
-	-webkit-transform: translateX(-100px);
-	transform: translateX(-100px);
+  -webkit-transform : translateX(-100px);
+  transform         : translateX(-100px);
 }
 
 .content > div.show .dummy-img,
 .content > div.show p,
 .content > div.show .dummy-title {
-	opacity: 1;
+  opacity : 1;
 }
 
 .vertical .content > div.show .dummy-img,
 .vertical .content > div.show p,
 .vertical .content > div.show .dummy-title {
-	-webkit-transform: translateY(0);
-	transform: translateY(0);
+  -webkit-transform : translateY(0);
+  transform         : translateY(0);
 }
 
 .horizontal .content > div.show .dummy-img,
 .horizontal .content > div.show p,
 .horizontal .content > div.show .dummy-title {
-	-webkit-transform: translateX(0);
-	transform: translateX(0);
+  -webkit-transform : translateX(0);
+  transform         : translateX(0);
 }
 
 div.show p:nth-child(2) {
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
+  -webkit-transition-delay : 0.1s;
+  transition-delay         : 0.1s;
 }
 
 div.show p:nth-child(3) {
-	-webkit-transition-delay: 0.2s;
-	transition-delay: 0.2s;
+  -webkit-transition-delay : 0.2s;
+  transition-delay         : 0.2s;
 }
 
 .dummy-img {
-	height: auto;
-	margin: 30px auto 15px;
+  height : auto;
+  margin : 10% auto 15px;
 }
 
 .dummy-img img {
-	width: 100%;
+  width : 100%;
 }
 
 div.show p {
-	text-align: left;
-	margin: 0 auto;
-	padding: 20px 0 10px;
-	color: #404040;
-	font-size: 1em; 
+  text-align : left;
+  margin     : 0 auto;
+  padding    : 20px 0 10px;
+  color      : #404040;
+  font-size  : 1em;
 }
 
 div.show p:last-child {
-	padding-bottom: 100px;
+  padding-bottom : 100px;
 }
 
 .dummy-title {
-	text-align: left;
-	margin: 0 auto;
-	padding: 10px 0 20px;
-	color: #404040;
-	font-size: 2em; 
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
-	border-bottom: 1px solid #666;
+  text-align               : left;
+  margin                   : 0 auto;
+  padding                  : 10px 0 20px;
+  color                    : #404040;
+  font-size                : 2em;
+  -webkit-transition-delay : 0.1s;
+  transition-delay         : 0.1s;
+  border-bottom            : 1px solid #666;
+
+  display                  : none;
 }
 
 /* Simple fallback */
@@ -288,10 +289,10 @@ div.show p:last-child {
 .no-pointerevents .close-content,
 .no-csstransforms3d .close-content,
 .no-csstransitions .close-content {
-	opacity: 1;
-	visibility: visible;
-	display: none;
-	height: auto;
+  opacity    : 1;
+  visibility : visible;
+  display    : none;
+  height     : auto;
 }
 
 .no-pointerevents .show .close-content,
@@ -303,20 +304,19 @@ div.show p:last-child {
 .no-csstransitions .dummy-img,
 .no-csstransitions .dummy-text,
 .no-csstransforms3d .dummy-img,
-.no-csstransforms3d .dummy-text, 
+.no-csstransforms3d .dummy-text,
 .no-pointerevents .dummy-img,
 .no-pointerevents .dummy-text {
-	display: block !important;
-	opacity: 1;
+  display : block !important;
+  opacity : 1;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width : 767px) {
+  .dummy-img {
+    margin : 50px auto 15px;
+  }
 
-.dummy-img {
-	margin: 50px auto 15px;
-}
-.close-content {
-	padding: 0.25em 0.2em;	
-}
-
+  .close-content {
+    padding : 0.25em 0.2em;
+  }
 }
